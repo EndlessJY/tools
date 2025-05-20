@@ -251,4 +251,262 @@ footer {
     .preview-section {
         padding: 1.5rem;
     }
+}
+
+/* 常用工具区域整体布局 */
+.tools-section {
+    margin: 32px 0;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.tools-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.tools-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+}
+
+.tools-buttons::-webkit-scrollbar {
+    height: 6px;
+    background: #f0f0f0;
+}
+
+.tools-buttons::-webkit-scrollbar-thumb {
+    background: #d2d2d7;
+    border-radius: 3px;
+}
+
+.tool-btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #e0e7ef;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tool-btn:hover {
+    background: #c9d6e6;
+}
+
+/* 工具卡片样式 */
+.tool-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* 计算器样式 */
+.calc-display {
+    width: 100%;
+    height: 48px;
+    background: #222;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: right;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.calc-btn {
+    padding: 12px 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    background: #e6eaf0;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.calc-btn:hover {
+    background: #bcd0e6;
+}
+
+/* 单位换算器样式 */
+.convert-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+#convertInput, #convertResult {
+    width: 100px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+#convertType, #convertFrom, #convertTo {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* 记事本样式 */
+#noteArea {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    resize: vertical;
+}
+.note-actions {
+    display: flex;
+    gap: 12px;
+}
+.note-actions button {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    background: #e0e7ef;
+    color: #222;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.note-actions button:hover {
+    background: #c9d6e6;
+}
+
+/* 计时器样式 */
+.timer-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.timer-display {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 8px;
+    color: #007AFF;
+    letter-spacing: 2px;
+}
+
+/* 秒表样式 */
+.stopwatch-display {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #007AFF;
+    letter-spacing: 2px;
+}
+.stopwatch-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* 日历样式 */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.calendar-table th, .calendar-table td {
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.calendar-table th {
+    color: #86868B;
+}
+.calendar-table td.selected {
+    background: #007AFF;
+    color: #fff;
+}
+.calendar-table td:hover {
+    background: #e0e7ef;
+}
+
+/* 随机数生成器样式 */
+.random-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #007AFF;
+}
+
+/* 待办清单样式 */
+.todo-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+.todo-list li.completed span {
+    text-decoration: line-through;
+    color: #86868B;
+}
+.todo-list button {
+    background: #e0e7ef;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    color: #222;
+    font-size: 0.9rem;
+}
+.todo-list button:hover {
+    background: #c9d6e6;
+}
+
+/* 货币换算器样式 */
+.currency-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #007AFF;
+}
+
+/* 英文单词翻译样式 */
+.translate-result {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #007AFF;
 } 

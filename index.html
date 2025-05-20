@@ -29,6 +29,128 @@
                 </div>
             </div>
 
+            <!-- 新增：常用工具入口 -->
+            <div class="tools-section">
+                <h2>常用小工具</h2>
+                <div class="tools-buttons">
+                    <button class="tool-btn" id="calcEntry">计算器</button>
+                    <button class="tool-btn" id="convertEntry">单位换算器</button>
+                    <button class="tool-btn" id="noteEntry">记事本</button>
+                    <button class="tool-btn" id="timerEntry">计时器</button>
+                    <button class="tool-btn" id="stopwatchEntry">秒表</button>
+                    <button class="tool-btn" id="calendarEntry">日历</button>
+                    <button class="tool-btn" id="randomEntry">随机数生成器</button>
+                    <button class="tool-btn" id="todoEntry">待办清单</button>
+                    <button class="tool-btn" id="currencyEntry">货币换算器</button>
+                    <button class="tool-btn" id="translateEntry">英文单词翻译</button>
+                </div>
+                <!-- 计算器卡片 -->
+                <div class="tool-card" id="calcCard" style="display:none;">
+                    <h3>计算器</h3>
+                    <div class="calc-display" id="calcDisplay">0</div>
+                    <div class="calc-buttons">
+                        <button class="calc-btn">7</button><button class="calc-btn">8</button><button class="calc-btn">9</button><button class="calc-btn">/</button>
+                        <button class="calc-btn">4</button><button class="calc-btn">5</button><button class="calc-btn">6</button><button class="calc-btn">*</button>
+                        <button class="calc-btn">1</button><button class="calc-btn">2</button><button class="calc-btn">3</button><button class="calc-btn">-</button>
+                        <button class="calc-btn">0</button><button class="calc-btn">.</button><button class="calc-btn" id="calcEqual">=</button><button class="calc-btn">+</button>
+                        <button class="calc-btn" id="calcClear">C</button>
+                    </div>
+                </div>
+                <!-- 单位换算器卡片 -->
+                <div class="tool-card" id="convertCard" style="display:none;">
+                    <h3>单位换算器</h3>
+                    <div class="convert-row">
+                        <select id="convertType">
+                            <option value="length">长度</option>
+                            <option value="weight">重量</option>
+                            <option value="temp">温度</option>
+                        </select>
+                    </div>
+                    <div class="convert-row">
+                        <input type="number" id="convertInput" placeholder="输入数值">
+                        <select id="convertFrom"></select>
+                        <span>→</span>
+                        <select id="convertTo"></select>
+                        <input type="text" id="convertResult" placeholder="结果" readonly>
+                    </div>
+                </div>
+                <!-- 记事本卡片 -->
+                <div class="tool-card" id="noteCard" style="display:none;">
+                    <h3>记事本</h3>
+                    <textarea id="noteArea" rows="6" placeholder="请输入内容..."></textarea>
+                    <div class="note-actions">
+                        <button id="noteCopy">复制全部</button>
+                        <button id="noteSave">保存</button>
+                        <button id="noteLoad">读取</button>
+                    </div>
+                </div>
+                <!-- 计时器卡片 -->
+                <div class="tool-card" id="timerCard" style="display:none;">
+                    <h3>计时器</h3>
+                    <div class="timer-row">
+                        <input type="number" id="timerMinute" min="0" placeholder="分钟" style="width:60px;"> :
+                        <input type="number" id="timerSecond" min="0" max="59" placeholder="秒" style="width:60px;">
+                        <button id="timerStart">开始</button>
+                        <button id="timerReset">重置</button>
+                    </div>
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                </div>
+                <!-- 秒表卡片 -->
+                <div class="tool-card" id="stopwatchCard" style="display:none;">
+                    <h3>秒表</h3>
+                    <div class="stopwatch-display" id="stopwatchDisplay">00:00.00</div>
+                    <div class="stopwatch-actions">
+                        <button id="stopwatchStart">开始</button>
+                        <button id="stopwatchPause">暂停</button>
+                        <button id="stopwatchReset">重置</button>
+                    </div>
+                </div>
+                <!-- 日历卡片 -->
+                <div class="tool-card" id="calendarCard" style="display:none;">
+                    <h3>日历</h3>
+                    <div class="calendar-controls">
+                        <button id="calendarPrev">上月</button>
+                        <span id="calendarMonth"></span>
+                        <button id="calendarNext">下月</button>
+                    </div>
+                    <table class="calendar-table" id="calendarTable"></table>
+                </div>
+                <!-- 随机数生成器卡片 -->
+                <div class="tool-card" id="randomCard" style="display:none;">
+                    <h3>随机数生成器</h3>
+                    <input type="number" id="randomMin" placeholder="最小值" style="width:80px;">
+                    <input type="number" id="randomMax" placeholder="最大值" style="width:80px;">
+                    <button id="randomGen">生成</button>
+                    <div class="random-result" id="randomResult"></div>
+                </div>
+                <!-- 待办清单卡片 -->
+                <div class="tool-card" id="todoCard" style="display:none;">
+                    <h3>待办清单</h3>
+                    <div class="todo-input-row">
+                        <input type="text" id="todoInput" placeholder="输入任务...">
+                        <button id="todoAdd">添加</button>
+                    </div>
+                    <ul class="todo-list" id="todoList"></ul>
+                </div>
+                <!-- 货币换算器卡片 -->
+                <div class="tool-card" id="currencyCard" style="display:none;">
+                    <h3>货币换算器</h3>
+                    <input type="number" id="currencyAmount" placeholder="金额" style="width:100px;">
+                    <select id="currencyFrom"></select>
+                    <span>→</span>
+                    <select id="currencyTo"></select>
+                    <button id="currencyConvert">换算</button>
+                    <div class="currency-result" id="currencyResult"></div>
+                </div>
+                <!-- 英文单词翻译卡片 -->
+                <div class="tool-card" id="translateCard" style="display:none;">
+                    <h3>英文单词翻译</h3>
+                    <input type="text" id="translateInput" placeholder="输入英文单词">
+                    <button id="translateBtn">查询</button>
+                    <div class="translate-result" id="translateResult"></div>
+                </div>
+            </div>
+
             <div class="compression-controls" style="display: none;">
                 <div class="quality-control">
                     <label for="quality">压缩质量：<span id="qualityValue">80%</span></label>
@@ -63,7 +185,7 @@
         </main>
 
         <footer>
-            <p>© 2024 图片压缩工具 - 简单、高效的在线图片压缩服务</p>
+            <p>© 2025 图片压缩工具 - 简单、高效的在线图片压缩服务</p>
         </footer>
     </div>
     <script src="js/main.js"></script>
